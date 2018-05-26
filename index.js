@@ -1,9 +1,9 @@
 'use strict'
 
 const patterns = [
-  /^import\s*"(.*?)"\s*(?:as \w+)?;/,
-  /^import\s*\*\s*as\s+\w+\s+from\s*"(.*?)";/,
-  /^import\s*{\s*\w+(?:\s+as\s+\w+)?(?:\s*,\s*\w+(?:\s+as\s+\w+)?)*\s*}\s*from\s*"(.*?)";/
+  /^import\s*("|')(.*?)\1\s*(?:as \w+)?;/,
+  /^import\s*\*\s*as\s+\w+\s+from\s*("|')(.*?)\1;/,
+  /^import\s*{\s*\w+(?:\s+as\s+\w+)?(?:\s*,\s*\w+(?:\s+as\s+\w+)?)*\s*}\s*from\s*("|')(.*?)\1;/
 ]
 
 const transitions = [
@@ -37,7 +37,7 @@ function extract(input) {
       for (var regex of patterns) {
         var match = regex.exec(test)
         if (match) {
-          paths.push(match[1])
+          paths.push(match[2])
           i += match[0].length - 1
           break
         }
