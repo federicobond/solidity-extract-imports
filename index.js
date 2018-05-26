@@ -7,20 +7,21 @@ const patterns = [
 ]
 
 const transitions = [
-  { '/': 1, '"': 5, "'": 7 },
-  { '*': 2, '/': 3 },
-  { '\n': 0 },
-  { '*': 4 },
-  { '/': 0, default: 3 },
-  { '"': 0, '\\': 6 },
-  { default: 5 },
-  { "'": 0, '\\': 8 },
-  { default: 7 }
+  null,
+  { '/': 2, '"': 6, "'": 8 },
+  { '*': 3, '/': 4 },
+  { '\n': 1 },
+  { '*': 5 },
+  { '/': 1, default: 4 },
+  { '"': 1, '\\': 7 },
+  { default: 6 },
+  { "'": 1, '\\': 9 },
+  { default: 8 }
 ]
 
 function extract(input) {
   var paths = []
-  var state = 0
+  var state = 1
 
   for (var i = 0; i < input.length; i++) {
     var ch = input[i]
@@ -31,7 +32,7 @@ function extract(input) {
       state
     )
 
-    if (state === 0 && ch === 'i') {
+    if (state === 1 && ch === 'i') {
       var test = input.substr(i)
       for (var regex of patterns) {
         var match = regex.exec(test)

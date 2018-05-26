@@ -47,8 +47,9 @@ describe('extract', function () {
       import "./abc.sol";
       // import "./def.sol";
       /* import "./def.sol"; */
+      import "./ghi.sol";
     `
-    assert.deepEqual(extract(test), ['./abc.sol'])
+    assert.deepEqual(extract(test), ['./abc.sol', './ghi.sol'])
   })
 
   it('ignores imports within string literals', function () {
