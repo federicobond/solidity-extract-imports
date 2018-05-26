@@ -27,27 +27,27 @@ describe('extract', function () {
 
   it('finds imports within bigger file', function () {
     var test = `
-			import "./abc.sol";
-			import "./def.sol";
-			
-			contract test {}
-		`
+      import "./abc.sol";
+      import "./def.sol";
+
+      contract test {}
+    `
     assert.deepEqual(extract(test), ['./abc.sol', './def.sol'])
   })
 
   it('finds imports in the same line', function () {
     var test = `
-			import "./abc.sol";import "./def.sol";
-		`
+      import "./abc.sol";import "./def.sol";
+    `
     assert.deepEqual(extract(test), ['./abc.sol', './def.sol'])
   })
 
   it('ignores commented out imports', function () {
     var test = `
-			import "./abc.sol";
-			// import "./def.sol";
-			/* import "./def.sol"; */
-		`
+      import "./abc.sol";
+      // import "./def.sol";
+      /* import "./def.sol"; */
+    `
     assert.deepEqual(extract(test), ['./abc.sol'])
   })
 
@@ -56,7 +56,7 @@ describe('extract', function () {
       contract test {
         string a = 'import "./abc.sol";';
       }
-		`
+    `
     assert.deepEqual(extract(test), [])
   })
 
@@ -65,7 +65,7 @@ describe('extract', function () {
       contract test {
         string a = '\\'import "./abc.sol";';
       }
-		`
+    `
     assert.deepEqual(extract(test), [])
   })
 })
