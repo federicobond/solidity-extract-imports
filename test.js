@@ -69,4 +69,14 @@ describe('extract', function () {
     `
     assert.deepEqual(extract(test), [])
   })
+
+  it('handles single quotes', function () {
+    var test = 'import \'./abc.sol\';'
+    assert.deepEqual(extract(test), ['./abc.sol'])
+  })
+
+  it('handles escaped quotes', function () {
+    var test = 'import "./abc\".sol";'
+    assert.deepEqual(extract(test), ['./abc\".sol'])
+  })
 })
