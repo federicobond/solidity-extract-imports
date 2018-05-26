@@ -79,4 +79,9 @@ describe('extract', function () {
     var test = 'import "./abc\".sol";'
     assert.deepEqual(extract(test), ['./abc\".sol'])
   })
+
+  it('handles spaces before semicolon', function () {
+    var test = 'import "./abc.sol" as x ;'
+    assert.deepEqual(extract(test), ['./abc.sol'])
+  });
 })

@@ -1,9 +1,9 @@
 'use strict'
 
 const patterns = [
-  /^import\s*("|')(.*?)\1\s*(?:as \w+)?;/,
-  /^import\s*\*\s*as\s+\w+\s+from\s*("|')(.*?)\1;/,
-  /^import\s*{\s*\w+(?:\s+as\s+\w+)?(?:\s*,\s*\w+(?:\s+as\s+\w+)?)*\s*}\s*from\s*("|')(.*?)\1;/
+  /^import\s*("|')(.*?)\1\s*(?:as \w+)?\s*;/,
+  /^import\s*\*\s*as\s+\w+\s+from\s*("|')(.*?)\1\s*;/,
+  /^import\s*{\s*\w+(?:\s+as\s+\w+)?(?:\s*,\s*\w+(?:\s+as\s+\w+)?)*\s*}\s*from\s*("|')(.*?)\1\s*;/
 ]
 
 const transitions = [
