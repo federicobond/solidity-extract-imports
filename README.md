@@ -1,6 +1,8 @@
 solidity-extract-imports
 ========================
 
+[![Build Status](https://travis-ci.org/federicobond/solidity-extract-imports.svg?branch=master)](https://travis-ci.org/federicobond/solidity-extract-imports)
+
 A simple tool to extract imports from Solidity source files
 
 ### Example
