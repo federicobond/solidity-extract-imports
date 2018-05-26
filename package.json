@@ -1,0 +1,14 @@
+{
+  "name": "solidity-extract-imports",
+  "version": "0.1.0",
+  "description": "A simple tool to extract imports from Solidity source files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Federico Bond",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
