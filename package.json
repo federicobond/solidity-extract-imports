@@ -1,6 +1,6 @@
 {
   "name": "solidity-extract-imports",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple tool to extract imports from Solidity source files",
   "main": "index.js",
   "scripts": {
