@@ -19,6 +19,17 @@ const transitions = [
   { default: 8 }
 ]
 
+function unescape(str) {
+  var chrs = str.split('')
+  for (var i = 0; i < chrs.length; i++) {
+    // drop any backslash character and keep the following one
+    if (chrs[i] === '\\') {
+      chrs.splice(i, 1)
+    }
+  }
+  return chrs.join('')
+}
+
 function extract(input) {
   var paths = []
   var state = 1
@@ -37,7 +48,7 @@ function extract(input) {
       for (var regex of patterns) {
         var match = regex.exec(test)
         if (match) {
-          paths.push(match[2])
+          paths.push(unescape(match[2]))
           i += match[0].length - 1
           break
         }
