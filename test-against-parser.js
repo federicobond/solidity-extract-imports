@@ -35,6 +35,8 @@ const REPOS = [
   ["livepeer/protocol"]
 ];
 
+let analizedFiles = 0;
+
 function getGithubOauthToken() {
   if (!fs.existsSync(GITHUB_OAUTH_TOKEN_PATH)) {
     console.error("You need to get a personal Github OAuth token and pase it in ", GITHUB_OAUTH_TOKEN_PATH);
@@ -104,6 +106,7 @@ async function getGithubContent(repoName, path) {
 }
 
 async function compareSolidityFile(file) {
+  analizedFiles +=1;
   const content = await got(file.download_url);
   return compareExtractedImports(content.body, file.html_url);
 }
@@ -127,4 +130,4 @@ async function validateAll(repos) {
   return Promise.all(repos.map(repo => validateRepoContracts(...repo)));
 }
 
-validateAll(REPOS).catch(console.error);
+validateAll(REPOS).then(() => console.log("Analized %s files", analizedFiles)).catch(console.error);
