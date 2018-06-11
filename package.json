@@ -9,6 +9,8 @@
   "author": "Federico Bond",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "got": "^8.3.1",
+    "mocha": "^5.2.0",
+    "solidity-parser-antlr": "^0.2.11"
   }
 }
