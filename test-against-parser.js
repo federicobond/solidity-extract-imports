@@ -19,7 +19,20 @@ const REPOS = [
   ["decentraland/marketplace-contracts"],
   ["decentraland/land"],
   ["AugurProject/augur-core", "source/contracts"],
-  ["aragon/aragonOS"]
+  ["aragon/aragonOS"],
+  ["numerai/contract"],
+  ["etherdelta/smart_contract", ""],
+  ["TokenMarketNet/ico"],
+  ["dapperlabs/cryptokitties-bounty"],
+  ["oraclize/ethereum-api", ""],
+  ["SmartIdentity/smartId-contracts"],
+  ["cityofeden/EDEN-smart-contracts", "solidity/contracts"],
+  ["ChronoBank/SmartContracts"],
+  ["KyberNetwork/smart-contracts"],
+  ["JoinColony/colonyNetwork"],
+  ["melonproject/smart-contracts", "src"],
+  ["trailofbits/not-so-smart-contracts", ""],
+  ["livepeer/protocol"]
 ];
 
 function getGithubOauthToken() {
