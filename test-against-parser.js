@@ -14,6 +14,7 @@ const OAUTH_TOKEN = getGithubOauthToken();
 const REPOS = [
   ["OpenZeppelin/openzeppelin-solidity"],
   ["zeppelinos/zos-lib"],
+  ["zeppelinos/kernel"],
   ["0xProject/0x-monorepo", "packages/contracts"],
   ["decentraland/erc721"],
   ["decentraland/marketplace-contracts"],
@@ -32,7 +33,22 @@ const REPOS = [
   ["JoinColony/colonyNetwork"],
   ["melonproject/smart-contracts", "src"],
   ["trailofbits/not-so-smart-contracts", ""],
-  ["livepeer/protocol"]
+  ["livepeer/protocol"],
+  ["ensdomains/ens"],
+  ["gnosis/MultiSigWallet"],
+  ["Arachnid/solidity-stringutils", "src"],
+  ["DigixGlobal/digixdao-contracts"],
+  ["modular-network/ethereum-libraries", ""],
+  ["makerdao/osm", "src"],
+  ["makerdao/medianizer", "src"],
+  ["makerdao/price-feed", "src"],
+  ["brakmic/BlockchainStore"],
+  ["Neufund/contracts"],
+  ["axic/density", ""],
+  ["blockstarter/ico-contracts", ""],
+  ["status-im/status-network-token"],
+  ["fravoll/solidity-patterns", ""],
+  ["DRI-network/RICO"]
 ];
 
 let analizedFiles = 0;
