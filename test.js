@@ -123,7 +123,7 @@ describe('extract', function () {
   it('handles line comments before the imports', function () {
     var test = `
       // hello world
-      import "./abc.sol" as x ;
+      import "./abc.sol" as x;
     `
     assert.deepEqual(extract(test), ['./abc.sol'])
   })
@@ -131,7 +131,17 @@ describe('extract', function () {
   it('handles block comments before the imports', function () {
     var test = `
       /* hello world */
-      import "./abc.sol" as x ;
+      import "./abc.sol" as x;
+    `
+    assert.deepEqual(extract(test), ['./abc.sol'])
+  })
+
+  it('handles multi-line block comments before the imports', function () {
+    var test = `
+      /* hello
+       * world
+       */
+      import "./abc.sol" as x;
     `
     assert.deepEqual(extract(test), ['./abc.sol'])
   })
